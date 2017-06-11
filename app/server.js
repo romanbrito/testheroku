@@ -28,7 +28,9 @@ app.use(express.static('./public'));
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
   defaultLayout: 'main',
-  partialsDir: ['views/partials']
+  partialsDir: [
+    'views/partials'
+  ]
 });
 
 app.engine('handlebars', hbs.engine);
@@ -49,7 +51,7 @@ if (process.env.MONGODB_URI) {
 
 const db = mongoose.connection;
 
-db.on('error', err => {
+db.on('error', (err) => {
   console.log('Mongoose Error:', err);
 });
 
@@ -81,9 +83,9 @@ app.use(require('./routes/main'));
 //   let clickID = req.body.clickID;
 //   let clicks = parseInt(req.body.clicks);
 
-// Note how this route utilizes the findOneAndUpdate function to update the clickCount
-// { upsert: true } is an optional object we can pass into the findOneAndUpdate method
-// If included, Mongoose will create a new document matching the description if one is not found
+    // Note how this route utilizes the findOneAndUpdate function to update the clickCount
+    // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
+    // If included, Mongoose will create a new document matching the description if one is not found
 //   Click.findOneAndUpdate({
 //     clickID: clickID
 //   }, {
@@ -99,6 +101,6 @@ app.use(require('./routes/main'));
 //   });
 // });
 
-app.listen(PORT, () => {
+app.listen(PORT, () =>{
   console.log('App listening on PORT: ' + PORT);
 });
