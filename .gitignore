@@ -60,3 +60,11 @@ typings/
 # idea files
 .idea
 
+# Building only react
+app
+build
+models
+public
+routes
+src
+
