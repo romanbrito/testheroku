@@ -36,6 +36,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# IDE
+.idea
+
 # Typescript v1 declaration files
 typings/
 
@@ -56,15 +59,4 @@ typings/
 
 # dotenv environment variables file
 .env
-
-# idea files
-.idea
-
-# Building only react
-app
-build
-models
-public
-routes
-src
 
